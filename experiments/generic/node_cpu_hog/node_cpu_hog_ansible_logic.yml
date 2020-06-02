@@ -18,6 +18,8 @@
     c_ns: "{{ lookup('env','CHAOS_NAMESPACE') }}"
     c_lib: "{{ lookup('env','LIB') }}"
 
+
+
   tasks:
 
     - block:
