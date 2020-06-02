@@ -1,0 +1,119 @@
+---
+- block: 
+
+    - block: 
+
+      - name: "[Prepare]: Select the application pod name"
+        shell: >
+          kubectl get pod -l {{ a_label }} -n {{ a_ns }}
+          -o=custom-columns=:metadata.name --no-headers
+          | shuf | head -1
+        args:
+          executable: /bin/bash
+        register: app_pod_name
+
+      - name: "[Prepare]: Recording the application pod name"
+        set_fact:
+          app_pod: "{{ app_pod_name.stdout }}"
+
+      when: "app_pod is not defined or app_pod == ''"
+
+    - name: "[Prepare]: Identify the application node name"
+      shell: >
+        kubectl get pod {{ app_pod }} -n {{ a_ns }}
+        --no-headers -o custom-columns=:spec.nodeName
+      args:
+        executable: /bin/bash
+      register: app_node
+
+    - name: "[Prepare]: Record the application node name"
+      set_fact: 
+        app_node: "{{ app_node.stdout }}"
+
+    - block: 
+        - name: "[Prepare:] Generate a run id if not passed from the engine/experiment"
+          shell: echo $(mktemp) | cut -d '.' -f 2 | cut -c -6
+          register: rand_string   
+
+        - set_fact:
+            run_id: "{{ rand_string.stdout | lower }}"
+      when: "run_id is not defined or run_id == ''"
+
+    - name: "[Prepare]: Patch the run_id to node service kill daemonset template"
+      template:
+        src:  /chaoslib/litmus/node_service_kill/node-service-kill-ds.j2
+        dest: /tmp/node-service-kill-ds.yml
+
+    - name: "[Prepare]: Create node service kill Daemonset"
+      shell: >
+        kubectl create -f /tmp/node-service-kill-ds.yml -n {{ a_ns }}
+      args:
+        executable: /bin/bash
+      register: result
+
+    - name: "[Prepare]: Confirm that the ds pods are running on all nodes"
+      shell: >
+        kubectl get pod -l name=service-kill-ds-{{ run_id }} --no-headers -o custom-columns=:status.phase
+        -n {{ a_ns }} | sort | uniq
+      args: 
+        executable: /bin/bash
+      register: result
+      until: "result.stdout == 'Running'"
+      delay: 2
+      retries: 90
+
+    - name: "[Prepare]: Derive the ds pod name on the application node"
+      shell: >
+        kubectl get pods -n {{ a_ns }} -l name=service-kill-ds-{{ run_id }} --no-headers -o wide
+        --field-selector spec.nodeName={{ app_node }} | awk '{print$1}'
+      args: 
+        executable: /bin/bash
+      register: ds_pod_name
+
+    - name: "[Prepare]: Record the ds pod name"
+      set_fact: 
+        ds_pod: "{{ ds_pod_name.stdout }}"
+
+    - name: "[Prepare]: Including the litmus LIB to perform svc chaos"
+      include: service_chaos.yml
+
+    - name: "[CleanUP]: Tear down service kill infra"
+      shell: >
+        kubectl delete ds -n {{ a_ns }} -l name=service-kill-ds-{{ run_id }}
+      args:
+        executable: /bin/bash
+      register: result
+
+    - name: "[Status]: Confirm that the svc chaos ds is stopped on all nodes"
+      shell: >
+        kubectl get pod -l name=service-kill-ds-{{ run_id }} --no-headers -o custom-columns=:status.phase -n {{ a_ns }} | sort | uniq
+      args: 
+        executable: /bin/bash
+      register: result_status
+      until: result_status.stdout ==''
+      delay: 2
+      retries: 90
+
+  rescue: 
+
+    - name: "[CleanUP]: Tear down service kill infra"
+      shell: >
+        kubectl delete ds -n {{ a_ns }} -l name=service-kill-ds-{{ run_id }}
+      args:
+        executable: /bin/bash
+      register: result
+
+    - name: "[Status]: Confirm that the svc chaos ds is stopped on all nodes"
+      shell: >
+        kubectl get pod -l name=service-kill-ds-{{ run_id }} --no-headers -o custom-columns=:status.phase -n {{ a_ns }} | sort | uniq
+      args: 
+        executable: /bin/bash
+      register: result_status
+      until: result_status.stdout ==''
+      delay: 2
+      retries: 90
+
+    - fail:
+        msg: "node_service_kill lib failed"
+      when: true
+      
