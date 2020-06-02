@@ -1,0 +1,1144 @@
+##########################################################################
+22:34:50
+S.NO: 1
+
+
+
+##########################################################################
+22:35:23
+S.NO: 2
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   431m         93Mi            
+pod-delete-wsy2zq         90m          1Mi             
+
+##########################################################################
+22:35:55
+S.NO: 3
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   388m         93Mi            
+pod-delete-wsy2zq         82m          2Mi             
+
+##########################################################################
+22:36:27
+S.NO: 4
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           11Mi            
+pod-delete-1upy57-bdd7v   400m         94Mi            
+pod-delete-wsy2zq         133m         2Mi             
+
+##########################################################################
+22:36:59
+S.NO: 5
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   394m         94Mi            
+pod-delete-wsy2zq         90m          7Mi             
+
+##########################################################################
+22:37:31
+S.NO: 6
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   437m         86Mi            
+pod-delete-wsy2zq         100m         2Mi             
+
+##########################################################################
+22:38:03
+S.NO: 7
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   455m         86Mi            
+pod-delete-wsy2zq         110m         2Mi             
+
+##########################################################################
+22:38:35
+S.NO: 8
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   416m         97Mi            
+pod-delete-wsy2zq         117m         5Mi             
+
+##########################################################################
+22:39:07
+S.NO: 9
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   398m         118Mi           
+pod-delete-wsy2zq         121m         2Mi             
+
+##########################################################################
+22:39:39
+S.NO: 10
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   409m         97Mi            
+pod-delete-wsy2zq         85m          2Mi             
+
+##########################################################################
+22:40:11
+S.NO: 11
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   412m         97Mi            
+pod-delete-wsy2zq         115m         2Mi             
+
+##########################################################################
+22:40:42
+S.NO: 12
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   410m         105Mi           
+pod-delete-wsy2zq         124m         5Mi             
+
+##########################################################################
+22:41:14
+S.NO: 13
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   406m         97Mi            
+pod-delete-wsy2zq         113m         9Mi             
+
+##########################################################################
+22:41:46
+S.NO: 14
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   426m         105Mi           
+pod-delete-wsy2zq         102m         2Mi             
+
+##########################################################################
+22:42:18
+S.NO: 15
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           10Mi            
+pod-delete-1upy57-bdd7v   416m         105Mi           
+pod-delete-wsy2zq         88m          2Mi             
+
+##########################################################################
+22:42:50
+S.NO: 16
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   404m         106Mi           
+pod-delete-wsy2zq         75m          2Mi             
+
+##########################################################################
+22:43:22
+S.NO: 17
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   391m         106Mi           
+pod-delete-wsy2zq         38m          2Mi             
+
+##########################################################################
+22:43:54
+S.NO: 18
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   428m         106Mi           
+pod-delete-wsy2zq         70m          2Mi             
+
+##########################################################################
+22:44:26
+S.NO: 19
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   408m         97Mi            
+pod-delete-wsy2zq         102m         2Mi             
+
+##########################################################################
+22:44:58
+S.NO: 20
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   422m         106Mi           
+pod-delete-wsy2zq         84m          10Mi            
+
+##########################################################################
+22:45:30
+S.NO: 21
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   432m         115Mi           
+pod-delete-wsy2zq         137m         2Mi             
+
+##########################################################################
+22:46:01
+S.NO: 22
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   427m         111Mi           
+pod-delete-wsy2zq         80m          2Mi             
+
+##########################################################################
+22:46:33
+S.NO: 23
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   396m         105Mi           
+pod-delete-wsy2zq         73m          2Mi             
+
+##########################################################################
+22:47:05
+S.NO: 24
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   405m         108Mi           
+pod-delete-wsy2zq         114m         2Mi             
+
+##########################################################################
+22:47:37
+S.NO: 25
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   391m         98Mi            
+pod-delete-wsy2zq         118m         2Mi             
+
+##########################################################################
+22:48:09
+S.NO: 26
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   405m         98Mi            
+pod-delete-wsy2zq         91m          2Mi             
+
+##########################################################################
+22:48:41
+S.NO: 27
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   414m         112Mi           
+pod-delete-wsy2zq         141m         2Mi             
+
+##########################################################################
+22:49:13
+S.NO: 28
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   422m         98Mi            
+pod-delete-wsy2zq         146m         2Mi             
+
+##########################################################################
+22:49:45
+S.NO: 29
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   413m         98Mi            
+pod-delete-wsy2zq         115m         2Mi             
+
+##########################################################################
+22:50:16
+S.NO: 30
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   398m         98Mi            
+pod-delete-wsy2zq         104m         10Mi            
+
+##########################################################################
+22:50:48
+S.NO: 31
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   416m         98Mi            
+pod-delete-wsy2zq         124m         2Mi             
+
+##########################################################################
+22:51:20
+S.NO: 32
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   433m         98Mi            
+pod-delete-wsy2zq         108m         2Mi             
+
+##########################################################################
+22:51:53
+S.NO: 33
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   405m         106Mi           
+pod-delete-wsy2zq         74m          2Mi             
+
+##########################################################################
+22:52:25
+S.NO: 34
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   427m         98Mi            
+pod-delete-wsy2zq         122m         2Mi             
+
+##########################################################################
+22:52:57
+S.NO: 35
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   403m         98Mi            
+pod-delete-wsy2zq         84m          2Mi             
+
+##########################################################################
+22:53:29
+S.NO: 36
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   416m         102Mi           
+pod-delete-wsy2zq         102m         2Mi             
+
+##########################################################################
+22:54:01
+S.NO: 37
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   398m         107Mi           
+pod-delete-wsy2zq         126m         6Mi             
+
+##########################################################################
+22:54:33
+S.NO: 38
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   417m         107Mi           
+pod-delete-wsy2zq         139m         2Mi             
+
+##########################################################################
+22:55:05
+S.NO: 39
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   400m         99Mi            
+pod-delete-wsy2zq         88m          2Mi             
+
+##########################################################################
+22:55:37
+S.NO: 40
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   437m         99Mi            
+pod-delete-wsy2zq         47m          2Mi             
+
+##########################################################################
+22:56:09
+S.NO: 41
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   370m         106Mi           
+pod-delete-wsy2zq         136m         2Mi             
+
+##########################################################################
+22:56:41
+S.NO: 42
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   427m         99Mi            
+pod-delete-wsy2zq         97m          2Mi             
+
+##########################################################################
+22:57:13
+S.NO: 43
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   404m         99Mi            
+pod-delete-wsy2zq         75m          2Mi             
+
+##########################################################################
+22:57:45
+S.NO: 44
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   425m         107Mi           
+pod-delete-wsy2zq         116m         2Mi             
+
+##########################################################################
+22:58:17
+S.NO: 45
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   436m         107Mi           
+pod-delete-wsy2zq         83m          2Mi             
+
+##########################################################################
+22:58:49
+S.NO: 46
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   446m         99Mi            
+pod-delete-wsy2zq         89m          2Mi             
+
+##########################################################################
+22:59:21
+S.NO: 47
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   408m         107Mi           
+pod-delete-wsy2zq         114m         2Mi             
+
+##########################################################################
+22:59:53
+S.NO: 48
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   417m         99Mi            
+pod-delete-wsy2zq         84m          2Mi             
+
+##########################################################################
+23:00:25
+S.NO: 49
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   443m         99Mi            
+pod-delete-wsy2zq         97m          2Mi             
+
+##########################################################################
+23:00:57
+S.NO: 50
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   407m         99Mi            
+pod-delete-wsy2zq         68m          2Mi             
+
+##########################################################################
+23:01:29
+S.NO: 51
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   383m         108Mi           
+pod-delete-wsy2zq         119m         2Mi             
+
+##########################################################################
+23:02:01
+S.NO: 52
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   376m         108Mi           
+pod-delete-wsy2zq         163m         2Mi             
+
+##########################################################################
+23:02:33
+S.NO: 53
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   410m         108Mi           
+pod-delete-wsy2zq         74m          10Mi            
+
+##########################################################################
+23:03:05
+S.NO: 54
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   430m         108Mi           
+pod-delete-wsy2zq         86m          2Mi             
+
+##########################################################################
+23:03:37
+S.NO: 55
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   420m         100Mi           
+pod-delete-wsy2zq         91m          2Mi             
+
+##########################################################################
+23:04:09
+S.NO: 56
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   427m         100Mi           
+pod-delete-wsy2zq         73m          2Mi             
+
+##########################################################################
+23:04:41
+S.NO: 57
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   412m         100Mi           
+pod-delete-wsy2zq         112m         2Mi             
+
+##########################################################################
+23:05:13
+S.NO: 58
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   397m         100Mi           
+pod-delete-wsy2zq         133m         2Mi             
+
+##########################################################################
+23:05:44
+S.NO: 59
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   403m         100Mi           
+pod-delete-wsy2zq         107m         2Mi             
+
+##########################################################################
+23:06:16
+S.NO: 60
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   408m         108Mi           
+pod-delete-wsy2zq         109m         2Mi             
+
+##########################################################################
+23:06:48
+S.NO: 61
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   419m         108Mi           
+pod-delete-wsy2zq         92m          2Mi             
+
+##########################################################################
+23:07:20
+S.NO: 62
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   407m         108Mi           
+pod-delete-wsy2zq         90m          2Mi             
+
+##########################################################################
+23:07:52
+S.NO: 63
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   419m         108Mi           
+pod-delete-wsy2zq         115m         2Mi             
+
+##########################################################################
+23:08:24
+S.NO: 64
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   417m         107Mi           
+pod-delete-wsy2zq         110m         2Mi             
+
+##########################################################################
+23:08:56
+S.NO: 65
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   369m         108Mi           
+pod-delete-wsy2zq         109m         2Mi             
+
+##########################################################################
+23:09:28
+S.NO: 66
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   434m         100Mi           
+pod-delete-wsy2zq         74m          2Mi             
+
+##########################################################################
+23:10:00
+S.NO: 67
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   441m         100Mi           
+pod-delete-wsy2zq         119m         2Mi             
+
+##########################################################################
+23:10:32
+S.NO: 68
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   443m         110Mi           
+pod-delete-wsy2zq         62m          2Mi             
+
+##########################################################################
+23:11:04
+S.NO: 69
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   391m         109Mi           
+pod-delete-wsy2zq         113m         2Mi             
+
+##########################################################################
+23:11:36
+S.NO: 70
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   403m         101Mi           
+pod-delete-wsy2zq         103m         2Mi             
+
+##########################################################################
+23:12:08
+S.NO: 71
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   427m         109Mi           
+pod-delete-wsy2zq         114m         2Mi             
+
+##########################################################################
+23:12:40
+S.NO: 72
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   398m         101Mi           
+pod-delete-wsy2zq         91m          2Mi             
+
+##########################################################################
+23:13:12
+S.NO: 73
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   412m         101Mi           
+pod-delete-wsy2zq         77m          2Mi             
+
+##########################################################################
+23:13:44
+S.NO: 74
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   409m         101Mi           
+pod-delete-wsy2zq         88m          2Mi             
+
+##########################################################################
+23:14:16
+S.NO: 75
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   407m         109Mi           
+pod-delete-wsy2zq         96m          2Mi             
+
+##########################################################################
+23:14:48
+S.NO: 76
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   432m         101Mi           
+pod-delete-wsy2zq         86m          2Mi             
+
+##########################################################################
+23:15:19
+S.NO: 77
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   410m         109Mi           
+pod-delete-wsy2zq         75m          2Mi             
+
+##########################################################################
+23:15:51
+S.NO: 78
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   423m         101Mi           
+pod-delete-wsy2zq         90m          2Mi             
+
+##########################################################################
+23:16:23
+S.NO: 79
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   426m         101Mi           
+pod-delete-wsy2zq         92m          2Mi             
+
+##########################################################################
+23:16:55
+S.NO: 80
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   411m         101Mi           
+pod-delete-wsy2zq         98m          2Mi             
+
+##########################################################################
+23:17:27
+S.NO: 81
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   431m         101Mi           
+pod-delete-wsy2zq         89m          2Mi             
+
+##########################################################################
+23:17:59
+S.NO: 82
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   408m         101Mi           
+pod-delete-wsy2zq         86m          2Mi             
+
+##########################################################################
+23:18:31
+S.NO: 83
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   423m         101Mi           
+pod-delete-wsy2zq         131m         2Mi             
+
+##########################################################################
+23:19:03
+S.NO: 84
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   421m         101Mi           
+pod-delete-wsy2zq         92m          2Mi             
+
+##########################################################################
+23:19:35
+S.NO: 85
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   426m         101Mi           
+pod-delete-wsy2zq         86m          2Mi             
+
+##########################################################################
+23:20:07
+S.NO: 86
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   416m         101Mi           
+pod-delete-wsy2zq         89m          2Mi             
+
+##########################################################################
+23:20:39
+S.NO: 87
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   441m         101Mi           
+pod-delete-wsy2zq         118m         2Mi             
+
+##########################################################################
+23:21:11
+S.NO: 88
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   427m         110Mi           
+pod-delete-wsy2zq         99m          2Mi             
+
+##########################################################################
+23:21:43
+S.NO: 89
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   438m         110Mi           
+pod-delete-wsy2zq         71m          2Mi             
+
+##########################################################################
+23:22:15
+S.NO: 90
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   426m         110Mi           
+pod-delete-wsy2zq         100m         2Mi             
+
+##########################################################################
+23:22:47
+S.NO: 91
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   391m         110Mi           
+pod-delete-wsy2zq         73m          2Mi             
+
+##########################################################################
+23:23:19
+S.NO: 92
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   422m         102Mi           
+pod-delete-wsy2zq         133m         2Mi             
+
+##########################################################################
+23:23:50
+S.NO: 93
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   429m         110Mi           
+pod-delete-wsy2zq         86m          2Mi             
+
+##########################################################################
+23:24:22
+S.NO: 94
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   426m         102Mi           
+pod-delete-wsy2zq         86m          2Mi             
+
+##########################################################################
+23:24:54
+S.NO: 95
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   425m         102Mi           
+pod-delete-wsy2zq         82m          2Mi             
+
+##########################################################################
+23:25:26
+S.NO: 96
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   409m         102Mi           
+pod-delete-wsy2zq         104m         2Mi             
+
+##########################################################################
+23:25:58
+S.NO: 97
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   427m         102Mi           
+pod-delete-wsy2zq         171m         2Mi             
+
+##########################################################################
+23:26:30
+S.NO: 98
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   416m         102Mi           
+pod-delete-wsy2zq         110m         11Mi            
+
+##########################################################################
+23:27:02
+S.NO: 99
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   427m         102Mi           
+pod-delete-wsy2zq         88m          2Mi             
+
+##########################################################################
+23:27:34
+S.NO: 100
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   430m         110Mi           
+pod-delete-wsy2zq         109m         10Mi            
+
+##########################################################################
+23:28:06
+S.NO: 101
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   411m         102Mi           
+pod-delete-wsy2zq         91m          2Mi             
+
+##########################################################################
+23:28:38
+S.NO: 102
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   415m         104Mi           
+pod-delete-wsy2zq         40m          2Mi             
+
+##########################################################################
+23:29:10
+S.NO: 103
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   414m         110Mi           
+pod-delete-wsy2zq         115m         2Mi             
+
+##########################################################################
+23:29:42
+S.NO: 104
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   434m         123Mi           
+pod-delete-wsy2zq         88m          2Mi             
+
+##########################################################################
+23:30:14
+S.NO: 105
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   419m         123Mi           
+pod-delete-wsy2zq         89m          2Mi             
+
+##########################################################################
+23:30:46
+S.NO: 106
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   383m         102Mi           
+pod-delete-wsy2zq         135m         2Mi             
+
+##########################################################################
+23:31:18
+S.NO: 107
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   424m         102Mi           
+pod-delete-wsy2zq         88m          2Mi             
+
+##########################################################################
+23:31:50
+S.NO: 108
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   412m         111Mi           
+pod-delete-wsy2zq         67m          2Mi             
+
+##########################################################################
+23:32:22
+S.NO: 109
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   428m         111Mi           
+pod-delete-wsy2zq         110m         2Mi             
+
+##########################################################################
+23:32:54
+S.NO: 110
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   382m         103Mi           
+pod-delete-wsy2zq         108m         11Mi            
+
+##########################################################################
+23:33:26
+S.NO: 111
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   405m         103Mi           
+pod-delete-wsy2zq         109m         2Mi             
+
+##########################################################################
+23:33:58
+S.NO: 112
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   408m         103Mi           
+pod-delete-wsy2zq         113m         2Mi             
+
+##########################################################################
+23:34:30
+S.NO: 113
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   452m         123Mi           
+pod-delete-wsy2zq         94m          2Mi             
+
+##########################################################################
+23:35:02
+S.NO: 114
+
+NAME                      CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner        1m           8Mi             
+pod-delete-1upy57-bdd7v   425m         111Mi           
+pod-delete-wsy2zq         92m          2Mi             
+
+##########################################################################
+23:35:34
+S.NO: 115
+
+NAME                 CPU(cores)   MEMORY(bytes)   
+nginx-chaos-runner   1m           8Mi             
+
+##########################################################################
+23:36:06
+S.NO: 116
+
+
+
+##########################################################################
+23:36:38
+S.NO: 117
+
+
+
+##########################################################################
+23:37:10
+S.NO: 118
+
+
+
+##########################################################################
+23:37:42
+S.NO: 119
+
+
+
+##########################################################################
+23:38:15
+S.NO: 120
+
+
+
+##########################################################################
+23:38:47
+S.NO: 121
+
+
+
+##########################################################################
+23:39:19
+S.NO: 122
+
+
+
+##########################################################################
+23:39:52
+S.NO: 123
+
+
+
+##########################################################################
+23:40:24
+S.NO: 124
+
+
+
+##########################################################################
+23:40:56
+S.NO: 125
+
+
+
+##########################################################################
+23:41:28
+S.NO: 126
+
+
+
+##########################################################################
+23:42:01
+S.NO: 127
+
+
+
+##########################################################################
+23:42:33
+S.NO: 128
+
+
+
+##########################################################################
+23:43:05
+S.NO: 129
+
+
+
+##########################################################################
+23:43:38
+S.NO: 130
+
+
+
+##########################################################################
+23:44:10
+S.NO: 131
+
+
+
+##########################################################################
+23:44:42
+S.NO: 132
+
+
+
+##########################################################################
+23:45:14
+S.NO: 133
+
+
+
+##########################################################################
+23:45:47
+S.NO: 134
+
+
+
