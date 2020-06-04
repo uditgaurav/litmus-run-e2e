@@ -1,0 +1,15 @@
+#!/bin/bash
+
+n=0
+while [[ "$n" -lt 3600 ]]
+do
+n=$((n+1))
+echo "##########################################################################" >> test1
+date +"%T" >> test1
+echo "S.NO: $n" >> test1
+echo "" >> test1
+pod=$(kubectl top po -n litmus -l chaosUID=4bb1ba48-a105-11ea-9c33-42010a8000a0)
+echo "$pod" >> test1
+echo "" >> test1
+sleep 30
+done
