@@ -50,6 +50,12 @@ jobs:
           dockerfile: build/ansible-runner/Dockerfile
           tags: "ci"
 
+      - name: Docker lint check
+        uses: luke142367/Docker-Lint-Action@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET: build/ansible-runner/Dockerfile
+
       #Install and configure a kind cluster
       - name: Installing Prerequisites
         run: |
