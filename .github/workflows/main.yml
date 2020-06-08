@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # - name: Setup Golang
-      #   uses: actions/setup-go@v2
-
       - name: Notification for e2e Start
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -39,134 +36,139 @@ jobs:
           
       - uses: actions/checkout@v2
         with:
-          ref: ${{steps.getcommit.outputs.sha}}        
+          ref: ${{steps.getcommit.outputs.sha}}      
 
       - name: Publish to Docker Repository
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          name: uditgaurav/docker-build
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          dockerfile: build/ansible-runner/Dockerfile
-          tags: "ci"
+        run: |
+          sudo docker build -f build/ansible-runner/Dockerfile -t uditgaurav/3298r5972u:v1 .
+          sudo docker images
 
       #Install and configure a kind cluster
-      - name: Installing Prerequisites
+      - name: Installing Prerequisites (KinD Cluster)
+        uses: engineerd/setup-kind@v0.4.0
+        with:
+            version: "v0.7.0"      
+
+      - name: Installing Testing
         run: |
-          kind create cluster --loglevel debug --wait=5m
           kubectl cluster-info --context kind-kind
           kind get kubeconfig --internal >$HOME/.kube/config
-          kubectl create -f https://raw.githubusercontent.com/uditgaurav/litmuschaos/master/app/nginx.yml
-          sleep 10
           kubectl get nodes
 
       - name: Load image on the nodes of the cluster
         run: |
           kubectl get nodes   
-          kind load docker-image --name=kind uditgaurav/docker-build:ci
+          kind load --loglevel trace docker-image uditgaurav/3298r5972u:v1
 
       - name: Deploy an application to be used under chaos
         run: |
-          kubectl apply -f https://raw.githubusercontent.com/uditgaurav/litmuschaos/master/app/nginx.yml
+          kubectl apply -f https://raw.githubusercontent.com/mayadata-io/chaos-ci-lib/master/app/nginx.yml
           sleep 30
-          
+
       - name: Setting up kubeconfig ENV for Github Chaos Action
         run: echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 ~/.kube/config)
 
       - name: Running Litmus pod delete chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-pod-delete')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
+        if: startsWith(github.event.comment.body, '/run-e2e-pod-delete') || startsWith(github.event.comment.body, '/run-e2e-all')
+        uses: uditgaurav/kubernetes-chaos@master
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_NAME: pod-delete
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci
+          EXPERIMENT_IMAGE: uditgaurav/3298r5972u
+          EXPERIMENT_IMAGE_TAG: v1
+          IMAGE_PULL_POLICY: IfNotPresent
           LITMUS_CLEANUP: true
 
-      - name: Running container kill chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-container-kill')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: container-kill
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci
-          LITMUS_CLEANUP: true
+      - name: Deleting KinD cluster
+        if: ${{ always() }}
+        run: kind delete cluster
 
-      - name: Running node-cpu-hog chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-node-cpu-hog')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: node-cpu-hog
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci     
-          LITMUS_CLEANUP: true
 
-      - name: Running node-memory-hog chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-node-memory-hog')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: node-memory-hog
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci     
-          LITMUS_CLEANUP: true
+      # - name: Running container kill chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-container-kill')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: container-kill
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0
+      #     LITMUS_CLEANUP: true
 
-      - name: Running pod-cpu-hog chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-pod-cpu-hog')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: pod-cpu-hog
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci     
-          LITMUS_CLEANUP: true              
+      # - name: Running node-cpu-hog chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-node-cpu-hog')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: node-cpu-hog
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0     
+      #     LITMUS_CLEANUP: true
 
-      - name: Running pod-memory-hog chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-pod-memory-hog')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: pod-cpu-hog
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci     
-          LITMUS_CLEANUP: true
+      # - name: Running node-memory-hog chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-node-memory-hog')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: node-memory-hog
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0     
+      #     LITMUS_CLEANUP: true
+
+      # - name: Running pod-cpu-hog chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-pod-cpu-hog')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: pod-cpu-hog
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0     
+      #     LITMUS_CLEANUP: true              
+
+      # - name: Running pod-memory-hog chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-pod-memory-hog')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: pod-cpu-hog
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0     
+      #     LITMUS_CLEANUP: true
       
-      - name: Running disk-fill chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-disk-fill')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: disk-fill
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci
-          LITMUS_CLEANUP: true
+      # - name: Running disk-fill chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-disk-fill')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: disk-fill
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0
+      #     LITMUS_CLEANUP: true
 
-      - name: Running pod network corruption chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-disk-fill')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: pod-network-corruption
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci
-          LITMUS_CLEANUP: true
+      # - name: Running pod network corruption chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-disk-fill')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: pod-network-corruption
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0
+      #     LITMUS_CLEANUP: true
 
-      - name: Running pod-network-latency chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-pod-network-latency')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: pod-network-latency
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci
-          LITMUS_CLEANUP: true 
+      # - name: Running pod-network-latency chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-pod-network-latency')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: pod-network-latency
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0
+      #     LITMUS_CLEANUP: true 
 
-      - name: Running pod-network-loss chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-pod-network-loss')
-        uses: mayadata-io/github-chaos-actions@v0.1.0
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: pod-network-loss
-          EXPERIMENT_IMAGE: uditgaurav/docker-build:ci
-          LITMUS_CLEANUP: true
+      # - name: Running pod-network-loss chaos experiment
+      #   if: startsWith(github.event.comment.body, '/run-e2e-pod-network-loss')
+      #   uses: mayadata-io/github-chaos-actions@v0.1.0
+      #   env:
+      #     INSTALL_LITMUS: true
+      #     EXPERIMENT_NAME: pod-network-loss
+      #     EXPERIMENT_IMAGE: uditgaurav/docker-build:v1.1.0
+      #     LITMUS_CLEANUP: true
 
-      - name: Running all tests
-        if: startsWith(github.event.comment.body, '/run-e2e-all')
-        run: |
-          echo "Hello all"          
+      # - name: Running all tests
+      #   if: startsWith(github.event.comment.body, '/run-e2e-all')
+      #   run: |
+      #     echo "Hello all"          
                    
       - name: Check the test run
         if: |
