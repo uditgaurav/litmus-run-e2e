@@ -31,7 +31,7 @@ RUN mkdir /etc/ansible/ /ansible && \
     echo "127.0.0.1" >> /etc/ansible/hosts && \
     echo "[defaults]" >> /etc/ansible/ansible.cfg && \
     echo "display_skipped_hosts = False" >> /etc/ansible/ansible.cfg && \ 
-    echo "local_tmp = /tmp" >> /etc/ansible/ansible.cfg && \
+    echo "local_tmp = /tmp" >> /etc/ansible/ansible.cfg 
     echo "remote_tmp = /tmp" >> /etc/ansible/ansible.cfg 
 
 #Copying Necessary Files
