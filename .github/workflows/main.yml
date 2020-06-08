@@ -41,14 +41,20 @@ jobs:
         with:
           ref: ${{steps.getcommit.outputs.sha}}        
 
-      - name: Publish to Docker Repository
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          name: uditgaurav/docker-build
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          dockerfile: build/ansible-runner/Dockerfile
-          tags: "ci"
+      - name: Docker lint check
+        uses: uditgaurav/docker-linter@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOCKERFILE: build/ansible-runner/Dockerfile
+
+      # - name: Publish to Docker Repository
+      #   uses: elgohr/Publish-Docker-Github-Action@master
+      #   with:
+      #     name: uditgaurav/docker-build
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+      #     dockerfile: build/ansible-runner/Dockerfile
+      #     tags: "ci"
 
       #Install and configure a kind cluster
       - name: Installing Prerequisites

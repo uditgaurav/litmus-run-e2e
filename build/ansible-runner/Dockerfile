@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu
 
 LABEL maintainer="LitmusChaos"
 
