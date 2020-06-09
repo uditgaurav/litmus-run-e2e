@@ -31,12 +31,12 @@ RUN mkdir /etc/ansible/ /ansible && \
     echo "127.0.0.1" >> /etc/ansible/hosts && \
     echo "[defaults]" >> /etc/ansible/ansible.cfg && \
     echo "display_skipped_hosts = False" >> /etc/ansible/ansible.cfg && \ 
-    echo "local_tmp = /tmp" >> /etc/ansible/ansible.cfg 
+    echo "local_tmp = /tmp" >> /etc/ansible/ansible.cfg && \
     echo "remote_tmp = /tmp" >> /etc/ansible/ansible.cfg 
 
 #Copying Necessary Files
-copy ./chaoslib ./chaoslib/
-copy ./hack/syntax-check ./hack/*.j2 ./
+COPY ./chaoslib ./chaoslib/
+COPY ./hack/syntax-check ./hack/*.j2 ./
 COPY ./utils ./utils/
 COPY ./build/plugins/default.py /usr/local/lib/python2.7/dist-packages/ansible/plugins/callback/default.py
 COPY ./build/utils/display.py /usr/local/lib/python2.7/dist-packages/ansible/utils/display.py
