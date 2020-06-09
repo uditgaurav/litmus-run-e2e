@@ -8,7 +8,7 @@ RUN apt-get clean && \
     apt-get install -y --no-install-recommends python-minimal python-pip netcat iproute2 jq sshpass \
     curl openssh-client python-setuptools && rm -rf /var/lib/apt/lists/* 
 
-pip install --upgrade pip
+RUN pip install --upgrade pip
 
 RUN touch /mnt/parameters.yml
 
