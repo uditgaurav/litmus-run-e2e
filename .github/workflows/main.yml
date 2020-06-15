@@ -69,7 +69,7 @@ jobs:
 
       - name: Running Litmus pod delete chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-pod-delete') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: mayadata-io/github-chaos-actions@v0.1.1
+        uses: mayadata-io/github-chaos-actions@master
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_NAME: pod-delete
@@ -80,7 +80,7 @@ jobs:
 
       - name: Running container kill chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-container-kill') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: mayadata-io/github-chaos-actions@v0.1.1
+        uses: mayadata-io/github-chaos-actions@master
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_NAME: container-kill
@@ -91,7 +91,7 @@ jobs:
 
       - name: Running node-cpu-hog chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-node-cpu-hog') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: mayadata-io/github-chaos-actions@v0.1.1
+        uses: mayadata-io/github-chaos-actions@master
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_IMAGE: litmuschaos/ansible-runner
@@ -101,7 +101,7 @@ jobs:
 
       - name: Running node-memory-hog chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-node-memory-hog') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: mayadata-io/github-chaos-actions@v0.1.1
+        uses: mayadata-io/github-chaos-actions@master
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_IMAGE: litmuschaos/ansible-runner
