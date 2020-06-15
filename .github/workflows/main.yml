@@ -41,7 +41,7 @@ jobs:
 
       - name: Build docker image
         run: |
-          sudo docker build -f build/ansible-runner/Dockerfile -t uditgaurav/3298r5972u:v1 .
+          sudo docker build -f build/ansible-runner/Dockerfile -t litmuschaos/ansible-runner:ci .
 
       #Install and configure a kind cluster
       - name: Installing Prerequisites (KinD Cluster)
