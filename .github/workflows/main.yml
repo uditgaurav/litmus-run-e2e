@@ -69,7 +69,7 @@ jobs:
 
       - name: Running Litmus pod delete chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-pod-delete') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: uditgaurav/kubernetes-chaos@master
+        uses: mayadata-io/github-chaos-actions@v0.1.1
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_NAME: pod-delete
@@ -80,7 +80,7 @@ jobs:
 
       - name: Running container kill chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-container-kill') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: uditgaurav/kubernetes-chaos@master
+        uses: mayadata-io/github-chaos-actions@v0.1.1
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_NAME: container-kill
@@ -89,7 +89,7 @@ jobs:
           IMAGE_PULL_POLICY: IfNotPresent
           CONTAINER_KILL_HELPER_IMAGE: litmuschaos/container-kill-helper
           CONTAINER_KILL_HELPER_TAG: latest
-          LIB: litmus
+          LIB: containerd
           LITMUS_CLEANUP: true
 
       - name: Running node-cpu-hog chaos experiment

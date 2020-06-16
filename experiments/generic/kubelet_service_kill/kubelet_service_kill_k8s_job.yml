@@ -2,18 +2,18 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: node-service-kill-
+  generateName: kubelet-service-kill-
 spec:
   template:
     metadata:
       labels:
-        experiment: node-service-kill
+        experiment: kubelet-service-kill
     spec:
-      serviceAccountName: node-service-kill 
+      serviceAccountName: %CHAOS_SERVICE_ACCOUNT%
       restartPolicy: Never
       containers:
       - name: ansibletest
-        image: uditgaurav/node-service-kill:v1
+        image: litmuschaos/ansible-runner:ci
         imagePullPolicy: Always
         env: 
           - name: ANSIBLE_STDOUT_CALLBACK
@@ -21,24 +21,17 @@ spec:
 
           ## ENTER THE NAMESPACE WHERE THE APPLICATION IS RUNNING
           - name: APP_NAMESPACE
-            value: 'litmus'
+            value: ''
 
           ## ENTER THE LABEL OF THE APPLICATION
           - name: APP_LABEL
-            value: 'run=nginx'
+            value: ''
           
           ## ENTER THE KIND OF APPLICATION 
-          ## WORKING FOR 'deployment' TYPE OF APPLICATION
           - name: APP_KIND
-            value: 'deployment'
-          
-          ## NAME OF SERVICE TAHT IS TO BE KILLED
-          ## CURRENTLY SUPPORTED 'kubelet'
-          - name: SERVICE_NAME
-            value: 'docker'
+            value: ''
 
-          ## THE TOTAL_CHAOS_DURATION FOR CPU HOG
-          ## DEFAULT VALUE IS 60sec
+          ## TOTAL CHAOS DURATION OF EXPERIMENT 
           - name: TOTAL_CHAOS_DURATION
             value: '90'
 
@@ -66,4 +59,4 @@ spec:
                 fieldPath: spec.serviceAccountName
 
         command: ["/bin/bash"]
-        args: ["-c", "ansible-playbook ./experiments/generic/node_service_kill/node_service_kill_ansible_logic.yml -i /etc/ansible/hosts -vv; exit 0"]
+        args: ["-c", "ansible-playbook ./experiments/generic/kubelet_service_kill/kubelet_service_kill_ansible_logic.yml -i /etc/ansible/hosts -vv; exit 0"]
