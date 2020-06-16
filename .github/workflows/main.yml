@@ -69,7 +69,7 @@ jobs:
 
       - name: Running Litmus pod delete chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-pod-delete') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: uditgaurav/kubernetes-chaos@master
+        uses: mayadata-io/github-chaos-actions@v0.1.1
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_NAME: pod-delete
@@ -80,7 +80,7 @@ jobs:
 
       - name: Running container kill chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-container-kill') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: uditgaurav/kubernetes-chaos@master
+        uses: mayadata-io/github-chaos-actions@v0.1.1
         env:
           INSTALL_LITMUS: true
           EXPERIMENT_NAME: container-kill
@@ -89,7 +89,7 @@ jobs:
           IMAGE_PULL_POLICY: IfNotPresent
           CONTAINER_KILL_HELPER_IMAGE: litmuschaos/container-kill-helper
           CONTAINER_KILL_HELPER_TAG: latest
-          LIB: litmus
+          LIB: containerd
           LITMUS_CLEANUP: true
 
       - name: Running node-cpu-hog chaos experiment
@@ -117,7 +117,8 @@ jobs:
       - name: Check the test run
         if: |
          startsWith(github.event.comment.body, '/run-e2e-pod-delete') || startsWith(github.event.comment.body, '/run-e2e-container-kill') ||
-         startsWith(github.event.comment.body, '/run-e2e-node-cpu-hog') || startsWith(github.event.comment.body, '/run-e2e-node-memory-hog')
+         startsWith(github.event.comment.body, '/run-e2e-node-cpu-hog') || startsWith(github.event.comment.body, '/run-e2e-node-memory-hog') ||
+         startsWith(github.event.comment.body, '/run-e2e-all')
         run: |
           echo ::set-env name=TEST_RUN::true
 
@@ -129,6 +130,13 @@ jobs:
           body: |  
             **Test Result:** All tests are passed
           reactions: hooray
+
+      - name: Add a merge label when all jobs are passed
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ success() && env.TEST_RUN == 'true' }}
+        with:
+          github_token: ${{ secrets.github_token }}
+          labels: merge          
 
       - name: Check for any job failed
         if: ${{ failure() }}

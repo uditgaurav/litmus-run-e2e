@@ -11,11 +11,11 @@ spec:
     spec:
       # Placeholder that is updated by the executor for automated runs
       # Provide appropriate SA (with desired permissions) if executed manually
-      serviceAccountName: pod-delete-sa
+      serviceAccountName: %CHAOS_SERVICE_ACCOUNT%
       restartPolicy: Never
       containers:
       - name: ansibletest
-        image: uditgaurav/pod-delete:v1
+        image: litmuschaos/ansible-runner:ci
         imagePullPolicy: Always
         env:
           - name: ANSIBLE_STDOUT_CALLBACK
@@ -23,21 +23,21 @@ spec:
 
           # provide application namespace
           - name: APP_NAMESPACE
-            value: 'litmus'
+            value: ''
 
           # provide application labels
           - name: APP_LABEL
-            value: 'run=nginx'
+            value: ''
 
            # provide application kind
           - name: APP_KIND
-            value: 'deployment'
+            value: ''
 
           - name: TOTAL_CHAOS_DURATION
             value: '15'
 
           - name: CHAOS_INTERVAL
-            value: '1'
+            value: '5'
 
           # provide the kill count
           - name: KILL_COUNT
@@ -57,7 +57,7 @@ spec:
 
           # provide the chaos namespace
           - name: CHAOS_NAMESPACE
-            value: 'litmus'
+            value: ''
 
           - name: POD_NAME
             valueFrom:
