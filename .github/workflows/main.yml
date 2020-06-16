@@ -43,40 +43,42 @@ jobs:
         run: |
           sudo docker build -f build/ansible-runner/Dockerfile -t litmuschaos/ansible-runner:ci .
 
-      #Install and configure a kind cluster
-      - name: Installing Prerequisites (KinD Cluster)
-        uses: engineerd/setup-kind@v0.4.0
-        with:
-            version: "v0.7.0"
+      # #Install and configure a kind cluster
+      # - name: Installing Prerequisites (KinD Cluster)
+      #   uses: engineerd/setup-kind@v0.4.0
+      #   with:
+      #       version: "v0.7.0"
 
-      - name: Configuring and testing the Installation
-        run: |
-          kubectl cluster-info --context kind-kind
-          kind get kubeconfig --internal >$HOME/.kube/config
-          kubectl get nodes            
+      # - name: Configuring and testing the Installation
+      #   run: |
+      #     kubectl cluster-info --context kind-kind
+      #     kind get kubeconfig --internal >$HOME/.kube/config
+      #     kubectl get nodes            
 
-      - name: Load image on the nodes of the cluster
-        run: |
-          kind load docker-image --name=kind litmuschaos/ansible-runner:ci
+      # - name: Load image on the nodes of the cluster
+      #   run: |
+      #     kind load docker-image --name=kind litmuschaos/ansible-runner:ci
 
-      - name: Deploy a sample application for chaos injection
-        run: |
-          kubectl apply -f https://raw.githubusercontent.com/mayadata-io/chaos-ci-lib/master/app/nginx.yml
-          sleep 30
+      # - name: Deploy a sample application for chaos injection
+      #   run: |
+      #     kubectl apply -f https://raw.githubusercontent.com/mayadata-io/chaos-ci-lib/master/app/nginx.yml
+      #     sleep 30
           
-      - name: Setting up kubeconfig ENV for Github Chaos Action
-        run: echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 ~/.kube/config)
+      # - name: Setting up kubeconfig ENV for Github Chaos Action
+      #   run: echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 ~/.kube/config)
 
       - name: Running Litmus pod delete chaos experiment
-        if: startsWith(github.event.comment.body, '/run-e2e-pod-delete') || startsWith(github.event.comment.body, '/run-e2e-all')
-        uses: mayadata-io/github-chaos-actions@v0.1.1
-        env:
-          INSTALL_LITMUS: true
-          EXPERIMENT_NAME: pod-delete
-          EXPERIMENT_IMAGE: litmuschaos/ansible-runner
-          EXPERIMENT_IMAGE_TAG: ci
-          IMAGE_PULL_POLICY: IfNotPresent
-          LITMUS_CLEANUP: true
+        run: |
+          echo "Hello world"
+        # if: startsWith(github.event.comment.body, '/run-e2e-pod-delete') || startsWith(github.event.comment.body, '/run-e2e-all')
+        # uses: mayadata-io/github-chaos-actions@v0.1.1
+        # env:
+        #   INSTALL_LITMUS: true
+        #   EXPERIMENT_NAME: pod-delete
+        #   EXPERIMENT_IMAGE: litmuschaos/ansible-runner
+        #   EXPERIMENT_IMAGE_TAG: ci
+        #   IMAGE_PULL_POLICY: IfNotPresent
+        #   LITMUS_CLEANUP: true
 
       - name: Running container kill chaos experiment
         if: startsWith(github.event.comment.body, '/run-e2e-container-kill') || startsWith(github.event.comment.body, '/run-e2e-all')
@@ -129,14 +131,7 @@ jobs:
           comment-id: "${{ github.event.comment.id }}"
           body: |  
             **Test Result:** All tests are passed
-          reactions: hooray
-
-      - name: Add a merge label when all jobs are passed
-        uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ success() && env.TEST_RUN == 'true' }}
-        with:
-          github_token: ${{ secrets.github_token }}
-          labels: merge          
+          reactions: hooray                
 
       - name: Check for any job failed
         if: ${{ failure() }}
@@ -158,4 +153,24 @@ jobs:
           comment-id: "${{ github.event.comment.id }}"
           body: |
             **Test Result:** No test found
-          reactions: eyes 
+          reactions: eyes
+
+  merge:
+    if: contains(github.event.comment.html_url, '/pull/') && startsWith(github.event.comment.body, '/merge')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add a merge label when all jobs are passed
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          labels: merge
+
+      - name: Integration check
+        uses: squalrus/merge-bot@v0.2.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          test: true
+          reviewers: true
+          labels: ready, merge
+          blocking-labels: do not merge
+          method: squash   
